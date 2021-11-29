@@ -52,11 +52,24 @@ We used GroupMe for any communications required between the team asynchronously.
 
 The project topic and functionality were open-ended. The goal was to use the experience gained from Project 1 to create a new application.
 
+MovieList has a login and registration system. Once a user has registered and logged in, they will have access to the search and watchlist page. On the search page, the user can find movies using the search filters and add them to the watchlist. The filters include keywords, release year, ratings, genres, and certifications. On the watchlist page, the user can view movies on their watchlist or remove them. By clicking a movie on either list, the user can view details such as description and streaming service providers. When the user is done using the application, they can log out and their watch list will be saved.
+
 <hr />
 
 ## Design
 
-MovieList has a login and registration system. Once a user has registered and logged in, they will have access to the search and watchlist page. On the search page, the user can find movies using the search filters and add them to the watchlist. The filters include keywords, release year, ratings, genres, and certifications. On the watchlist page, the user can view movies on their watchlist or remove them. By clicking a movie on either list, the user can view details such as description and streaming service providers. When the user is done using the application, they can log out and their watch list will be saved.
+The primary components of our system are:
+1. Frontend Component
+
+    This component will be visible to users and users interact directly with it. We will follow an event-driven architectural style for this component. If we need to communicate with the backend component for a given event, we will use Representation State Transfer to communicate with the backend component. It helps us decouple backend and frontend components and allows us to update the implementation of any one component without affecting another.
+
+2. Backend Component
+
+    This component will not be visible to the users. However, it will be used by the frontend component for authentication, search, and watchlist functionalities. We will follow the client-server architecture style, where the backend component serves as the server and the frontend component server as the client. A single server (backend component) can serve multiple clients (frontend components) which reduces the cost of running the application. This makes it easier to scale our server as required when we have increased clients.
+    
+    This component will also be responsible for communicating with The Movie DB API to find movies based on search parameters and get additional details for a movie. Similarly, it will connect with GCP Datastore to find and store user data such as credentials and watchlist. It also provides authentication functionalities such as issuing and validating JWTs that is used to identify authenticated users and limit access the features.
+
+
 
 ### Component Diagram
 
