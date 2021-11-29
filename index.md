@@ -35,7 +35,7 @@ We decided to make a web application allowing a user to make a watchlist of movi
 
 ### Communication
 
-We used GroupMe for any communications required between the team asynchronously. We regularly discussed any accomplishments made and broke down other goals into different tasks, assign them amongst us, and ensure everyone has access to the required resources to complete the assigned task and all roadblocks have been resolved.
+We used GroupMe for any communications required between the team asynchronously. We regularly discussed any accomplishments made and broke down other goals into different tasks, assigned them amongst us, and ensured everyone had access to the required resources to complete the assigned task and all roadblocks had been resolved.
 
 ### Risk Management
 
