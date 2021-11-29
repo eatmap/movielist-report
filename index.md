@@ -58,18 +58,20 @@ The list of functional requirements of the system are:
 
   A user will provide their username and password. If the username exists and the password matches, they will be now authorized to use the search feature of the system.
 
-- A new user should be able to register into the system. 
+- A new user should be able to register into the system.
 
-  A user will provide a new username and password which will be saved by the system. This will allow a user to log in to the application to use the search feature. 
- 
+  A user will provide a new username and password which will be saved by the system. This will allow a user to log in to the application to use the search feature.
+
 - An authenticated user should be able to search for movies based on the following search inputs:
+
   - Keyword
   - Release Year
   - Ratings
   - Genres
   - Certifications
- 
+
 - An authenticated user should be able to see the details about the movie:
+
   - Runtime
   - Release Year
   - Ratings
@@ -77,13 +79,14 @@ The list of functional requirements of the system are:
   - Genres
   - Movie Trailer
   - Movie Watch Providers (Streaming Services, Rental, Buy)
- 
+
 - An authenticated user should be able to save a movie in a watchlist.
 - An authenticated user should be able to see all the movies saved in their watchlist.
 - An authenticated user should be able to remove a movie from their watchlist.
-- An authenticated user should be able to log out from the system. 
+- An authenticated user should be able to log out from the system.
 
 Some of the non-functional requirements of the system are:
+
 - All of the user password must be hashed before storing in the database.
 - Unauthenticated users cannot search for movies and view watchlist.
 - Authenticated user cannot view watchlist of other users.
@@ -115,6 +118,38 @@ The primary components of our system are:
 ### Class Diagram
 
 <iframe frameborder="0" style="width:100%;height:1161px;" src="https://viewer.diagrams.net/?highlight=0000ff&nav=1&title=Copy%20of%20Class%20Diagram#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D19ChYWUYOVBCGRt1arCBkeqJx3wTh3Qjm%26export%3Ddownload"></iframe>
+
+### User Interface Design
+
+MovieList aims to elevate the user experience through intuitive and seamless UI design for each component in the application. To achieve it, we will be creating different visual elements in our components.
+
+#### Login Page
+
+![Login Page](/images/login-page.png)
+
+#### Registration Page
+
+![Registration Page](/images/registration-page.png)
+
+#### Search Page
+
+![Search Page](/images/search-page.png)
+
+#### Movie Details
+
+The movie details will be shown in a modal. It will contain:
+
+- Basic information and trailer for the movie, button to manage movie in watchlist
+
+  ![Movie Details](/images/movie-details-overview.png)
+
+- Watch Providers
+
+  ![Movie Providers](/images/movie-details-providers.png)
+
+#### Watchlist Page
+
+![Watchlist Page](/images/watchlist-page.png)
 
 <hr />
 
