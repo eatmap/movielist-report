@@ -16,7 +16,7 @@ We decided to make a web application allowing a user to make a watchlist of movi
 
 ## Design
 
-MovieList has a login and registration system. Once a user has registered and logged in, they will have access to the search and watchlist page. On the search page, the user can find movies using the search filters and add or remove them from the watchlist. The filters include keywords, release year, ratings, genres, and certifications. On the watchlist page, the user can see movies on their watchlist and add or remove them. By clicking a movie on either list, the user can view details such as description and streaming service providers. When the user is done using the application, they can log out and their watch list will be saved.
+MovieList has a login and registration system. Once a user has registered and logged in, they will have access to the search and watchlist page. On the search page, the user can find movies using the search filters and add them to the watchlist. The filters include keywords, release year, ratings, genres, and certifications. On the watchlist page, the user can view movies on their watchlist or remove them. By clicking a movie on either list, the user can view details such as description and streaming service providers. When the user is done using the application, they can log out and their watch list will be saved.
 
 ### Frontend:
 
