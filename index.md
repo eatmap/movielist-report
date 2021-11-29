@@ -35,7 +35,7 @@ We decided to make a web application allowing a user to make a watchlist of movi
 
 ### Communication
 
-We used GroupMe for any communications required between the team asynchronously. We regularly discussed any accomplishments made and broke down other goals into different tasks, assign them amongst us, and ensure everyone has access to the required resources to complete the assigned task and all roadblocks have been resolved.
+We used GroupMe for any communications required between the team asynchronously. We regularly discussed any accomplishments made and broke down other goals into different tasks, assigned them amongst us, and ensured everyone had access to the required resources to complete the assigned task and all roadblocks had been resolved.
 
 ### Risk Management
 
@@ -57,10 +57,6 @@ The project topic and functionality were open-ended. The goal was to use the exp
 ## Design
 
 MovieList has a login and registration system. Once a user has registered and logged in, they will have access to the search and watchlist page. On the search page, the user can find movies using the search filters and add them to the watchlist. The filters include keywords, release year, ratings, genres, and certifications. On the watchlist page, the user can view movies on their watchlist or remove them. By clicking a movie on either list, the user can view details such as description and streaming service providers. When the user is done using the application, they can log out and their watch list will be saved.
-
-### Frontend:
-
-### Backend:
 
 <hr />
 
