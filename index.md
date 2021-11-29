@@ -52,24 +52,61 @@ We used GroupMe for any communications required between the team asynchronously.
 
 The project topic and functionality were open-ended. The goal was to use the experience gained from Project 1 to create a new application.
 
-MovieList has a login and registration system. Once a user has registered and logged in, they will have access to the search and watchlist page. On the search page, the user can find movies using the search filters and add them to the watchlist. The filters include keywords, release year, ratings, genres, and certifications. On the watchlist page, the user can view movies on their watchlist or remove them. By clicking a movie on either list, the user can view details such as description and streaming service providers. When the user is done using the application, they can log out and their watch list will be saved.
+The list of functional requirements of the system are:
+
+- An existing user should be able to be log into the system.
+
+  A user will provide their username and password. If the username exists and the password matches, they will be now authorized to use the search feature of the system.
+
+- A new user should be able to register into the system. 
+
+  A user will provide a new username and password which will be saved by the system. This will allow a user to log in to the application to use the search feature. 
+ 
+- An authenticated user should be able to search for movies based on the following search inputs:
+  - Keyword
+  - Release Year
+  - Ratings
+  - Genres
+  - Certifications
+ 
+- An authenticated user should be able to see the details about the movie:
+  - Runtime
+  - Release Year
+  - Ratings
+  - Overview
+  - Genres
+  - Movie Trailer
+  - Movie Watch Providers (Streaming Services, Rental, Buy)
+ 
+- An authenticated user should be able to save a movie in a watchlist.
+- An authenticated user should be able to see all the movies saved in their watchlist.
+- An authenticated user should be able to remove a movie from their watchlist.
+- An authenticated user should be able to log out from the system. 
+
+Some of the non-functional requirements of the system are:
+- All of the user password must be hashed before storing in the database.
+- Unauthenticated users cannot search for movies and view watchlist.
+- Authenticated user cannot view watchlist of other users.
+- Multiple users can use the system simultaneously.
+- The system should scale appropriately based on the user traffic.
+- The system must be reliable to promote good user experience and minimize downtimes.
+- Results from API calls to get movie details should be cached to increase performance and reduce traffic to 3rd party APIs.
 
 <hr />
 
 ## Design
 
 The primary components of our system are:
+
 1. Frontend Component
 
-    This component will be visible to users and users interact directly with it. We will follow an event-driven architectural style for this component. If we need to communicate with the backend component for a given event, we will use Representation State Transfer to communicate with the backend component. It helps us decouple backend and frontend components and allows us to update the implementation of any one component without affecting another.
+   This component will be visible to users and users interact directly with it. We will follow an event-driven architectural style for this component. If we need to communicate with the backend component for a given event, we will use Representation State Transfer to communicate with the backend component. It helps us decouple backend and frontend components and allows us to update the implementation of any one component without affecting another.
 
 2. Backend Component
 
-    This component will not be visible to the users. However, it will be used by the frontend component for authentication, search, and watchlist functionalities. We will follow the client-server architecture style, where the backend component serves as the server and the frontend component server as the client. A single server (backend component) can serve multiple clients (frontend components) which reduces the cost of running the application. This makes it easier to scale our server as required when we have increased clients.
-    
-    This component will also be responsible for communicating with The Movie DB API to find movies based on search parameters and get additional details for a movie. Similarly, it will connect with GCP Datastore to find and store user data such as credentials and watchlist. It also provides authentication functionalities such as issuing and validating JWTs that is used to identify authenticated users and limit access the features.
+   This component will not be visible to the users. However, it will be used by the frontend component for authentication, search, and watchlist functionalities. We will follow the client-server architecture style, where the backend component serves as the server and the frontend component server as the client. A single server (backend component) can serve multiple clients (frontend components) which reduces the cost of running the application. This makes it easier to scale our server as required when we have increased clients.
 
-
+   This component will also be responsible for communicating with The Movie DB API to find movies based on search parameters and get additional details for a movie. Similarly, it will connect with GCP Datastore to find and store user data such as credentials and watchlist. It also provides authentication functionalities such as issuing and validating JWTs that is used to identify authenticated users and limit access the features.
 
 ### Component Diagram
 
@@ -77,7 +114,7 @@ The primary components of our system are:
 
 ### Class Diagram
 
-<iframe frameborder="0" style="width:100%;height:1188px;" src="https://viewer.diagrams.net/?highlight=0000ff&nav=1&title=Copy%20of%20Class%20Diagram#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D19ChYWUYOVBCGRt1arCBkeqJx3wTh3Qjm%26export%3Ddownload"></iframe>
+<iframe frameborder="0" style="width:100%;height:1161px;" src="https://viewer.diagrams.net/?highlight=0000ff&nav=1&title=Copy%20of%20Class%20Diagram#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D19ChYWUYOVBCGRt1arCBkeqJx3wTh3Qjm%26export%3Ddownload"></iframe>
 
 <hr />
 
