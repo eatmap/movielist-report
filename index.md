@@ -83,7 +83,7 @@ We also performed acceptance testing and regression testing once the core requir
 Some parts of the product that were not tested are as follows:
 - **Movies Search and Details API**
 
-   These APIs use `The Movie DB API` and we assume he results retrieved from `The Movie DB API` are valid given different search filters and movie id. We simply do not have the resources to ensure the results returned by the API are correct. Hence, we simply assume that they always return the correct result.
+   These APIs use [The Movie DB API](https://developers.themoviedb.org/) and we assume the results retrieved from the 3rd party API are always valid. We do not have the resources to ensure the results returned by the API are correct. Hence, we simply assume that they always return the correct result.
 
 
 
