@@ -1,5 +1,5 @@
 theme: jekyll-theme-cayman
 title: MovieList Report
-description: MovieList is a web app that allows users to search and save movies in a watchlist
+description: MovieList is a web app that allows users to search for movies and save them in a watchlist
 github:
   repository_url: https://github.com/eatmap/movielist
