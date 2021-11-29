@@ -58,15 +58,20 @@ The project topic and functionality were open-ended. The goal was to use the exp
 
 MovieList has a login and registration system. Once a user has registered and logged in, they will have access to the search and watchlist page. On the search page, the user can find movies using the search filters and add them to the watchlist. The filters include keywords, release year, ratings, genres, and certifications. On the watchlist page, the user can view movies on their watchlist or remove them. By clicking a movie on either list, the user can view details such as description and streaming service providers. When the user is done using the application, they can log out and their watch list will be saved.
 
-### Frontend:
+### Component Diagram
 
-### Backend:
+<iframe frameborder="0" style="width:100%;height:602px;" src="https://viewer.diagrams.net/?highlight=0000ff&nav=1&title=component-diagram#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1RWP2ysdOO12GLQcZSBtM4XfWC88ytRZY%26export%3Ddownload"></iframe>
+
+### Class Diagram
+
+<iframe frameborder="0" style="width:100%;height:1188px;" src="https://viewer.diagrams.net/?highlight=0000ff&nav=1&title=Copy%20of%20Class%20Diagram#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D19ChYWUYOVBCGRt1arCBkeqJx3wTh3Qjm%26export%3Ddownload"></iframe>
 
 <hr />
 
 ## Testing
 
 We tested the following parts of the system:
+
 - Login API
 - Registration API
 - Watchlists API
@@ -81,11 +86,10 @@ We ran unit and integration tests using Jest. The tests were run on both pull re
 We also performed acceptance testing and regression testing once the core requirements were met. This allowed us to test the system as a user thoroughly and verify if we met all the user requirements specified in the Requirements.
 
 Some parts of the product that were not tested are as follows:
+
 - **Movies Search and Details API**
 
-   These APIs use [The Movie DB API](https://developers.themoviedb.org/) and we assume the results retrieved from the 3rd party API are always valid. We do not have the resources to ensure the results returned by the API are correct. Hence, we simply assume that they always return the correct result.
-
-
+  These APIs use [The Movie DB API](https://developers.themoviedb.org/) and we assume the results retrieved from the 3rd party API are always valid. We do not have the resources to ensure the results returned by the API are correct. Hence, we simply assume that they always return the correct result.
 
 <hr />
 
