@@ -35,8 +35,7 @@ We decided to make a web application allowing a user to make a watchlist of movi
 
 ### Communication
 
-We had regular hour-long meetings every week (sprint). The goal of this meeting was to discuss the accomplishments from the past sprint and prepare for the upcoming sprint. We broke down the sprint goal into different tasks, assign them amongst us, and ensure everyone has access to the required resources to complete the assigned task and all roadblocks have been resolved. <br />
-We used GroupMe for any communications required between the team asynchronously to maintain contact.
+We used GroupMe for any communications required between the team asynchronously. We regularly discussed any accomplishments made and broke down other goals into different tasks, assign them amongst us, and ensure everyone has access to the required resources to complete the assigned task and all roadblocks have been resolved.
 
 ### Risk Management
 
@@ -44,8 +43,8 @@ We used GroupMe for any communications required between the team asynchronously 
 | ------------------------------------------- | ----------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Running out of GCP credits                  | Low         | High     | We are using GCP products such as GCP Cloud Run and Container Registry. We could run out of GCP credits due to high usage, and this would affect running our application properly. Worst case scenario, our application could even stop completely.                                                             | We are currently using GCP for Cloud Run and Container Registry. These services are not completely free, we might run of our credits over time. Hence it is important that we use these services optimally. We are using cache on client side to reduce the usage of Cloud Run. This improved the performance of our application greatly. In addition, we made sure we allocated only required resources and optimize the application such that new instances are not created unnecessarily to handle increasing user traffic. |
 | Inefficient communication                   | Low         | High     | This can lead to conflicts and possibly missing deadlines. Without effective communication, it will be hard to address or tackle any roadblocks that we might encounter.                                                                                                                                        | To promote communication, we constantly checked in with each other to track each other’s progress. Effective communication helped tackle issues quickly and in time. We used chat messages frequently to update each other about the progress and ask for help if required.                                                                                                                                                                                                                                                    |
-| Unauthorized access to pages and API routes | Medium      | High     | We want to limit unauthorized users from using our application. If not, someone else could simply misuse our application for their purpose such as potentially use our APIs to serve their applications.                                                                                                        | Except for authentication API routes and pages, all other routes and pages were made private by default. We used JWT for both authentication and authorization purposes. Anytime a request was made to a private page or a route, we checked for a valid JWT. If JWT is not provided, is invalid, or is expired, the request is rejected.                                                                                                                                                                                      |
 | Poor Code Quality                           | Low         | High     | This can be the result of unoptimized and buggy code. As a result, the application might not be maintainable. Similarly, unoptimized code can rack up the fee on Cloud Run and Contrainer Registry. It can introduce some serious security vulnerabilities that others could potentially exploit to cause harm. | For each pull request, we did code reviews and changes were committed to the `main` branch after atleast one other team member approved. We used GitHub action to run all existing test to ensure no breaking chages were introduced.                                                                                                                                                                                                                                                                                          |
+| Unauthorized access to pages and API routes | Medium      | High     | We want to limit unauthorized users from using our application. If not, someone else could simply misuse our application for their purpose such as potentially use our APIs to serve their applications.                                                                                                        | Except for authentication API routes and pages, all other routes and pages were made private by default. We used JWT for both authentication and authorization purposes. Anytime a request was made to a private page or a route, we checked for a valid JWT. If JWT is not provided, is invalid, or is expired, the request is rejected.                                                                                                                                                                                      |
 
 <hr />
 
@@ -67,7 +66,26 @@ MovieList has a login and registration system. Once a user has registered and lo
 
 ## Testing
 
-Testing for integration and deployment was done through GitHub Actions. Integration tests were run on both pull requests and commits to the main branch. Deployment tests were run on commits to the main branch.
+We tested the following parts of the system:
+- Login API
+- Registration API
+- Watchlists API
+- Frontend UI elements
+
+For each of these parts, we incldued both functional and non-functional cases. We came up with a functional specification and identified independently testable features for these parts. This resulted in a good range of test cases.
+
+We performed static verification and inspections on every pull request before changes were merged into the main codebase as part of the code review process. This was a complete and systematic process that allowed us to thoroughly consider program behaviors. For this, we considered both black-box testing and white-box testing. We inspected if the code did what it was expected to do and tested the system as a user to ensure it met the requirements.
+
+We ran unit and integration tests using Jest. The tests were run on both pull requests and commits to the main branch using GitHub Actions. This allowed us to catch errors that were not seen as part of the inspections. In addition, deployment tests were run on commits to the main branch to verify the application was deployed correctly. This allowed us to prevent adding breaking changes to the existing code as they were be caught these tests.
+
+We also performed acceptance testing and regression testing once the core requirements were met. This allowed us to test the system as a user thoroughly and verify if we met all the user requirements specified in the Requirements.
+
+Some parts of the product that were not tested are as follows:
+- **Movies Search and Details API**
+
+   These APIs use `The Movie DB API` and we assume he results retrieved from `The Movie DB API` are valid given different search filters and movie id. We simply do not have the resources to ensure the results returned by the API are correct. Hence, we simply assume that they always return the correct result.
+
+
 
 <hr />
 
